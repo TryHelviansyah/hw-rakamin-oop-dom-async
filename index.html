@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrasi dan List Pendaftar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <ul class="nav nav-tabs" id="myTabs">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            id="registrasi-tab"
+            data-toggle="tab"
+            href="#registrasi"
+            role="tab"
+            >Registrasi</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="list-tab"
+            data-toggle="tab"
+            href="#list"
+            role="tab"
+            >List Pendaftar</a
+          >
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="registrasi" role="tabpanel">
+          <h2>Form Registrasi</h2>
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="nama">Nama (Minimal 10 karakter)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                required
+                minlength="10"
+              />
+            </div>
+            <div class="form-group">
+              <label for="umur">Umur (Minimal 25 tahun)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="umur"
+                name="umur"
+                required
+                min="25"
+              />
+            </div>
+            <div class="form-group">
+              <label for="uang"
+                >Uang Sangu (Minimal 100 ribu dan Maksimal 1 juta)</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="uang"
+                name="uang"
+                required
+                min="100000"
+                max="1000000"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="list" role="tabpanel">
+          <h2>List Pendaftar</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Uang Sangu</th>
+              </tr>
+            </thead>
+            <tbody id="pendaftarTableBody"></tbody>
+          </table>
+          <p>
+            Rata-rata pendaftar memiliki uang sangu sebesar
+            <span id="rataUangSangu"></span> dengan rata-rata umur
+            <span id="rataUmur"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
